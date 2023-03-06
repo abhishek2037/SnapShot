@@ -1,0 +1,25 @@
+version: 0.2
+phases:
+  install:
+    commands:
+      - echo " package installation "
+      - npm install
+      - yum install update
+      - yum install java -y
+      - yum install maven -y
+      - yum install git -y
+     
+  pre_build:
+    commands:
+      - echo Installing dependencies...
+      - npm run build
+  build:
+    commands:
+      - echo " Build is complete"
+      - npm run build
+  post_build:
+    commands:
+      - echo " Deploying the application... "
+  
+  
+  
